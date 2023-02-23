@@ -144,7 +144,7 @@ public class ClassForCallin {
 				System.out.println("Headphones.");
 				ShowData.showdata("Headphones");
 				System.out.println(" Press 1 to see the price comparision in region other than India.");
-				System.out.println(" Press 2 to see the Highest and lowest prices of Laptops.");
+				System.out.println(" Press 2 to see the Highest and lowest prices of Headphones.");
 				System.out.println(" Press 3 to see the total Stock of Headphones.");
 
 // Taking Input for the sub options.
@@ -411,6 +411,5 @@ public class ClassForCallin {
 			break; // main case 1 break;
 		} // while loop closed.
 		in.close();
-
 	}
 }

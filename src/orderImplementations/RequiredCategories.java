@@ -27,10 +27,10 @@ public class RequiredCategories {
 					"insert into REQUIREMENTS " + "(NAME,QUANTITY)" + "VALUES ( ? " + "," + qty + ")");
 			ps.setString(1, category);
 			ResultSet rs = ps.executeQuery();
+			in.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		in.close();
 	}
 
 }
