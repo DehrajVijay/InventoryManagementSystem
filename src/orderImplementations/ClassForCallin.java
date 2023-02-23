@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ClassForCallin {
 	public static void classforcall() {
-
 		int choice, subcho;
 		Scanner in = new Scanner(System.in);
 		String restart = "Y";
@@ -20,7 +19,7 @@ public class ClassForCallin {
 				System.out.println(" Press 1 to see the price comparision in region other than India.");
 				System.out.println(" Press 2 to see the Highest and lowest prices of Laptops.");
 				System.out.println(" Press 3 to see the total Stock of Laptops.");
-
+				System.out.println("Press 4 to sort the products");
 // Taking Input for the sub options.
 				subcho = in.nextInt();
 				switch (subcho) {
@@ -128,6 +127,42 @@ public class ClassForCallin {
 						break;// switch break of stock choices.
 					}
 					break;// case 3.
+				case 4:
+					System.out.println("Sort by Name press --> 1.\nSort by Price press -->2.");
+					subcho = in.nextInt();
+					switch (subcho) {
+					case 1:
+						Sorting.sortByName("Laptops");
+						System.out.println("Do you want to check other details?\nPress Y for yes or N for no");
+						restart = in.next();
+						if (restart.equalsIgnoreCase("Y")) {
+							System.out.println("Plese Enter your choice");
+						} else {
+							System.out.println("Thanks! Good Day.");
+						}
+						break;
+					case 2:
+						Sorting.sortByPrice("Laptops");
+						System.out.println("Do you want to check other details?\nPress Y for yes or N for no");
+						restart = in.next();
+						if (restart.equalsIgnoreCase("Y")) {
+							System.out.println("Plese Enter your choice");
+						} else {
+							System.out.println("Thanks! Good Day.");
+						}
+						break;
+					default:
+						System.out.println("Wrong Input!");
+						System.out.println("Do you want to check other details?\nPress Y for yes or N for no");
+						restart = in.next();
+						if (restart.equalsIgnoreCase("Y")) {
+							System.out.println("Plese Enter your choice");
+						} else {
+							System.out.println("Thanks! Good Day.");
+						}
+						break;
+					}
+					break;
 				default:
 					System.out.println("Wrong Input!");
 					System.out.println("Do you want to check other details?\nPress Y for yes or N for no");
@@ -379,23 +414,7 @@ public class ClassForCallin {
 						break;// switch break.
 					}
 					break;// case 3 break.
-				default:
-					System.out.println("Wrong Input!");
-					System.out.println("Do you want to check other details?\nPress Y for yes or N for no");
-					restart = in.next();
-					if (restart.equalsIgnoreCase("Y")) {
-						System.out.println("Plese Enter your choice");
-					} else {
-						System.out.println("Thanks! Good Day.");
-					}
-					break;// switch break.
 				}
-
-				break;// case 3 break.
-			case 4:
-				RequiredCategories.addCategories();
-				break;
-
 			default:// main category default.
 				System.out.println("Wrong Input!");
 				System.out.println("Do you want to check other details?\nPress Y for yes or N for no");
@@ -408,7 +427,7 @@ public class ClassForCallin {
 
 				break;// main category switch break
 			}
-			break; // main case 1 break;
+			// break; // main case 1 break;
 		} // while loop closed.
 		in.close();
 	}

@@ -10,14 +10,16 @@ import databaseconnectivity.ConnectionProvider;
 public class RequiredCategories {
 
 	public static void addCategories() {
-		Scanner in = new Scanner(System.in);
+
+		Scanner sc = new Scanner(System.in);
 		String category = null;
+
 		System.out.println("Please enter Category/Product name.");
-		category = in.nextLine();
+		category = sc.nextLine();
 
 		int qty = 0;
 		System.out.println("Please enter quantity.");
-		qty = in.nextInt();
+		qty = sc.nextInt();
 		System.out.println("Product and Quantity are added successfully!\n Thanks!! ");
 		try {
 			Connection con = ConnectionProvider.getConnection();
@@ -27,10 +29,11 @@ public class RequiredCategories {
 					"insert into REQUIREMENTS " + "(NAME,QUANTITY)" + "VALUES ( ? " + "," + qty + ")");
 			ps.setString(1, category);
 			ResultSet rs = ps.executeQuery();
-			in.close();
+			sc.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+
 	}
 
 }
