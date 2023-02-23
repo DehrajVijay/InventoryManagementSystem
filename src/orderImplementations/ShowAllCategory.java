@@ -20,6 +20,7 @@ public class ShowAllCategory {
 		System.out.println("Press 1 for Laptops");
 		System.out.println("Press 2 for Headphones");
 		System.out.println("Press 3 Watches");
+		System.out.println("Press 4 If the Category/Product is not listed.");
 	
 	}
 }

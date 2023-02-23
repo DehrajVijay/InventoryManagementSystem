@@ -11,17 +11,18 @@ public class RequiredCategories {
 
 	public static void addCategories() {
 
-		Scanner sc = new Scanner(System.in);
-		String category = null;
-
-		System.out.println("Please enter Category/Product name.");
-		category = sc.nextLine();
-
-		int qty = 0;
-		System.out.println("Please enter quantity.");
-		qty = sc.nextInt();
-		System.out.println("Product and Quantity are added successfully!\n Thanks!! ");
 		try {
+			
+			Scanner sc = new Scanner(System.in);
+			String category = null;
+			int qty = 0;
+
+			System.out.println("Please enter Category/Product name.");
+			category = sc.nextLine();
+			System.out.println("Please enter quantity.");
+			qty = sc.nextInt();
+		
+			System.out.println("Product and Quantity are added successfully!\n Thanks!! ");
 			Connection con = ConnectionProvider.getConnection();
 			// Statement stmt = con.createStatement()
 
@@ -29,11 +30,10 @@ public class RequiredCategories {
 					"insert into REQUIREMENTS " + "(NAME,QUANTITY)" + "VALUES ( ? " + "," + qty + ")");
 			ps.setString(1, category);
 			ResultSet rs = ps.executeQuery();
-			sc.close();
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
 	}
 
 }
