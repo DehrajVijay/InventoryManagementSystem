@@ -8,14 +8,14 @@ import java.util.Scanner;
 import databaseconnectivity.ConnectionProvider;
 
 public class RequiredCategories {
-
+//method to add the values in the oracle database.
 	public static void addCategories() {
 
 		try {
-			
-			Scanner sc = new Scanner(System.in);
 			String category = null;
 			int qty = 0;
+			
+			Scanner sc = new Scanner(System.in);
 
 			System.out.println("Please enter Category/Product name.");
 			category = sc.nextLine();
