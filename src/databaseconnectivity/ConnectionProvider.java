@@ -6,8 +6,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
 
+/**
+ * public class which consists of getConnection() method.
+ */
 public class ConnectionProvider {
 	public static Connection con = null;
+
+	/**
+	 * It is a static method.method to establish the connection with data base.
+	 * 
+	 * @return the connection object.
+	 */
 
 	public static Connection getConnection() {
 		if (con == null) {
@@ -27,6 +36,7 @@ public class ConnectionProvider {
 				// Drivermanager Class has an internal getConnection method.
 				Connection con = DriverManager.getConnection(url, username, password);
 				// System.out.println("Connection Established Successfully");
+
 				return con;
 
 			} catch (Exception e) {

@@ -1,5 +1,11 @@
 package orderImplementations;
 
+/**
+ * public class showAllCategory which has print method.
+ * 
+ * @author Vijay Dehraj.
+ *
+ */
 public class ShowAllCategory {
 
 	public enum showCategory {
@@ -7,6 +13,9 @@ public class ShowAllCategory {
 
 	}
 
+	/**
+	 * static method to print the main category.
+	 */
 	public static void print() {
 
 		System.out.println(
@@ -21,6 +30,6 @@ public class ShowAllCategory {
 		System.out.println("Press 2 for Headphones");
 		System.out.println("Press 3 Watches");
 		System.out.println("Press 4 If the Category/Product is not listed.");
-	
+
 	}
 }
